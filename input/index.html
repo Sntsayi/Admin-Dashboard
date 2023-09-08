@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/e236dc9dfa.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.3/dist/chart.umd.min.js"></script>
+    <title>Admin Dashboard</title>
+  </head>
+  <body class="bg-gray-200 flex relative">
+    <!-- rispansive Navbar -->
+    <div
+      class="menuNavBar absolute bg-gray-900 text-white top-0 left-0 w-full h-full p-8 -translate-y-400% transition-all duration-1000"
+    >
+      <div class="closeBtn flex justify-end mt-5 mr-5 cursor-pointer">
+        <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff"></i>
+      </div>
+
+      <div class="flex flex-col mt-6 gap-6 divide-y-4 divide-gray-100">
+        <div
+          class="text-center space-x-3 hover:bg-blue-900 transition-all duration-300"
+        >
+          <i class="fa-solid fa-gauge fa-xl" style="color: #ffffff"></i>
+          <button class="p-4">Dashboard</button>
+        </div>
+        <div
+          class="text-center space-x-3 hover:bg-blue-900 transition-all duration-300"
+        >
+          <i class="fa-solid fa-users fa-xl" style="color: #ffffff"></i>
+          <button class="p-4">Costumers</button>
+        </div>
+        <div
+          class="text-center space-x-3 hover:bg-blue-900 transition-all duration-300"
+        >
+          <i
+            class="fa-brands fa-first-order fa-xl -ml-7 pr-3"
+            style="color: #fff"
+          ></i>
+          <button class="p-4">Orders</button>
+        </div>
+
+        <div
+          class="text-center space-x-3 hover:bg-blue-900 transition-all duration-300"
+        >
+          <i class="fa-solid fa-tent fa-xl -ml-0 pr-3" style="color: #fff"></i>
+          <button class="p-4">Campaigns</button>
+        </div>
+        <div
+          class="text-center space-x-3 hover:bg-blue-900 transition-all duration-300"
+        >
+          <i
+            class="fa-regular fa-message fa-xl -ml-5 pr-3"
+            style="color: #fff"
+          ></i>
+          <button class="p-4">Message</button>
+        </div>
+        <div
+          class="text-center space-x-3 hover:bg-blue-900 transition-all duration-300"
+        >
+          <i
+            class="fa-brands fa-app-store fa-xl -ml-11 pr-3"
+            style="color: #ffffff"
+          ></i>
+          <button class="p-4">Apps</button>
+        </div>
+        <div
+          class="text-center space-x-3 hover:bg-blue-900 transition-all duration-300"
+        >
+          <i class="fa-solid fa-gear fa-xl -ml-7 pr-3" style="color: #fff"></i>
+          <button class="p-4">Setting</button>
+        </div>
+      </div>
+    </div>
+    <!-- rispansive Navbar -->
+    <!-- sideNavbar -->
+    <div class="bg-indigo-900 w-64 hidden xl:block">
+      <div class="bg-indigo-800">
+        <div class="uppercase text-gray-200 p-5 text-xl font-bold">
+          super corp
+        </div>
+      </div>
+      <div>
+        <div class="p-5 text-gray-200 uppercase text-xs font-extrabold">
+          Pages
+        </div>
+      </div>
+      <div class="space-y-7">
+        <div class="flex m-5 mt-2">
+          <div class="mr-2">
+            <i class="fa-solid fa-gauge fa-2xl" style="color: #000000"></i>
+          </div>
+          <div class="mx-3 text-sm font-semibold cursor-pointer text-gray-100">
+            Dashboard
+          </div>
+        </div>
+
+        <div class="flex m-5 mt-2">
+          <div class="mr-1">
+            <i class="fa-solid fa-users fa-2xl" style="color: #ffffff"></i>
+          </div>
+          <div class="mx-3 text-sm font-semibold cursor-pointer text-gray-100">
+            Costumers
+          </div>
+        </div>
+
+        <div class="flex m-5 mt-2">
+          <div class="mr-2.5">
+            <i
+              class="fa-brands fa-first-order fa-2xl"
+              style="color: #cad8f2"
+            ></i>
+          </div>
+          <div class="mx-3 text-sm font-semibold cursor-pointer text-gray-100">
+            Orders
+          </div>
+        </div>
+
+        <div class="flex m-5 mt-2">
+          <div class="mr-1">
+            <i class="fa-solid fa-tent fa-2xl" style="color: #7f8ca4"></i>
+          </div>
+          <div class="mx-3 text-sm font-semibold cursor-pointer text-gray-100">
+            Campaigns
+          </div>
+        </div>
+
+        <div class="flex m-5 mt-2">
+          <div class="mr-2">
+            <i class="fa-regular fa-message fa-2xl" style="color: #0c0f12"></i>
+          </div>
+          <div class="mx-3 text-sm font-semibold cursor-pointer text-gray-100">
+            Message
+          </div>
+        </div>
+
+        <div class="flex m-5 mt-2">
+          <div class="mr-2">
+            <i class="fa-brands fa-app-store fa-2xl" style="color: #ffffff"></i>
+          </div>
+          <div class="mx-3 text-sm font-semibold cursor-pointer text-gray-100">
+            Apps
+          </div>
+        </div>
+
+        <div class="flex m-5 mt-2">
+          <div class="mr-2">
+            <i class="fa-solid fa-gear fa-2xl" style="color: #0c0c0e"></i>
+          </div>
+          <div class="mx-3 text-sm font-semibold cursor-pointer text-gray-100">
+            Setting
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sideNavbar -->
+
+    <!-- main Area -->
+    <div class="flex w-full flex-col">
+      <!-- Top navbar -->
+      <div>
+        <div class="bg-white px-2 py-2 h-18 justify-between w-full flex">
+          <div class="left flex p-3">
+            <i
+              class="fa-solid fa-user-tie fa-2xl w-15 h-15 py-4"
+              style="color: #000000"
+            ></i>
+            <span class="block px-4 py-1 text-lg">Sntsayi-Ponkey </span>
+          </div>
+          <div class="right pr-14 flex justify-center">
+            <i
+              class="fa-solid fa-magnifying-glass fa-lg mx-3 mt-6"
+              style="color: #000000"
+            ></i>
+            <i
+              class="fa-regular fa-comment-dots fa-lg mx-3 mt-6"
+              style="color: #000000"
+            ></i>
+            <i
+              class="fa-solid fa-triangle-exclamation fa-lg mx-3 mt-6"
+              style="color: #000000"
+            ></i>
+            <a href="" class="mt-2.5 ml-2 text-lg text-indigo-500">Logout</a>
+            <button class="menuBtn xl:hidden">
+              <i class="fa-solid fa-bars fa-xl ml-6" style="color: #000000"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Top navbar -->
+      <!-- site banner -->
+      <div class="bg-indigo-200 m-7 p-6">
+        <div class="text-4xl text-gray-800 font-medium">
+          Good Morning, Super Inc.👋
+        </div>
+        <div class="mt-4">These are the stats for today, have a good day</div>
+      </div>
+      <!-- site banner -->
+
+      <div
+        class="card-container space-y-5 xl:grid xl:grid-cols-2 m-7 space-x-6"
+      >
+        <div class="card bg-white p-4">
+          <div>
+            <img src="./images/wallet.png" alt="" class="w-10 h-10" />
+          </div>
+          <div class="font-bold text-xl text-gray-700">Super plus</div>
+          <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">
+            Sales
+          </div>
+          <span class="font=bold text-3xl">$25,647</span>
+          <span
+            class="bg-green-500 text-white p-1 rounded-full text-sm font-bold align-text-top"
+          >
+            +57%</span
+          >
+          <canvas id="chart1"></canvas>
+        </div>
+        <div class="card bg-white p-4">
+          <div>
+            <img src="./images/wallet.png" alt="" class="w-10 h-10" />
+          </div>
+          <div class="font-bold text-xl text-gray-700">Super plus</div>
+          <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">
+            Sales
+          </div>
+          <span class="font=bold text-3xl">$25,647</span>
+          <span
+            class="bg-red-500 text-white p-1 rounded-full text-sm font-bold align-text-top"
+          >
+            -9%</span
+          >
+          <canvas id="chart2"></canvas>
+        </div>
+
+        <div class="card bg-white p-4">
+          <div>
+            <img src="./images/wallet.png" alt="" class="w-10 h-10" />
+          </div>
+          <div class="font-bold text-xl text-gray-700">Super plus</div>
+          <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">
+            Sales
+          </div>
+          <span class="font=bold text-3xl">$25,647</span>
+          <span
+            class="bg-green-500 text-white p-1 rounded-full text-sm font-bold align-text-top"
+          >
+            +57%</span
+          >
+          <canvas id="chart3"></canvas>
+        </div>
+        <div class="card bg-white p-4">
+          <div>
+            <img src="./images/wallet.png" alt="" class="w-10 h-10" />
+          </div>
+          <div class="font-bold text-xl text-gray-700">Super plus</div>
+          <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">
+            Sales
+          </div>
+          <span class="font=bold text-3xl">$25,647</span>
+          <span
+            class="bg-red-500 text-white p-1 rounded-full text-sm font-bold align-text-top"
+          >
+            -9%</span
+          >
+          <canvas id="chart4"></canvas>
+        </div>
+      </div>
+      <!-- card container -->
+      <!-- another card -->
+
+      <div class="card-container block xl:flex m-7 space-y-5 space-x-6">
+        <div class="bg-white ml-5 mt-5 p-4 divide-y divide-gray-200">
+          <div class="font-bold text-lg pb-4">Top Countries</div>
+          <canvas id="chart5" class="pt-4"></canvas>
+        </div>
+        <div class="bg-white md:w-4/5 p-4">
+          <div class="font-bold text-lg pb-4">Top Channels</div>
+          <div
+            class="flex bg-gray-100 text-gray-500 p-2 uppercase font-bold text-xs"
+          >
+            <div class="w-1/3">
+              <div>Source</div>
+            </div>
+            <div class="w-3/4 flex space-x-14">
+              <div>Visitors</div>
+              <div>Revenues</div>
+              <div>Sales</div>
+              <div>Conversion</div>
+            </div>
+          </div>
+          <div class="multi-channel-container divide-y divide-gray-200">
+            <div class="single-channel pt-2 pb-2">
+              <div class="flex">
+                <div class="w-1/3">
+                  <div class="image-text flex">
+                    <div>
+                      <img
+                        class="w-8 h-8"
+                        src="./images/icons8-youtube-144.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="pl-2 pt-1">YouTube</div>
+                  </div>
+                </div>
+                <div class="w-3/4 flex space-x-16">
+                  <div>2.4k</div>
+                  <div class="text-green-500">$16,000</div>
+                  <div>340</div>
+                  <div class="text-blue-500">4.9%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="single-channel pt-2 pb-2">
+              <div class="flex">
+                <div class="w-1/3">
+                  <div class="image-text flex">
+                    <div>
+                      <img
+                        class="w-8 h-8"
+                        src="./images/icons8-facebook-200.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="pl-2 pt-1">Facebook</div>
+                  </div>
+                </div>
+                <div class="w-3/4 flex space-x-16">
+                  <div>2.4k</div>
+                  <div class="text-green-500">$16,000</div>
+                  <div>340</div>
+                  <div class="text-blue-500">4.9%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="single-channel pt-2 pb-2">
+              <div class="flex">
+                <div class="w-1/3">
+                  <div class="image-text flex">
+                    <div>
+                      <img
+                        class="w-8 h-8"
+                        src="./images/icons8-github-144.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="pl-2 pt-1">Github</div>
+                  </div>
+                </div>
+                <div class="w-3/4 flex space-x-16">
+                  <div>2.4k</div>
+                  <div class="text-green-500">$16,000</div>
+                  <div>340</div>
+                  <div class="text-blue-500">4.9%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="single-channel pt-2 pb-2">
+              <div class="flex">
+                <div class="w-1/3">
+                  <div class="image-text flex">
+                    <div>
+                      <img
+                        class="w-8 h-8"
+                        src="./images/icons8-instagram-144.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="pl-2 pt-1">Instagram</div>
+                  </div>
+                </div>
+                <div class="w-3/4 flex space-x-16">
+                  <div>2.4k</div>
+                  <div class="text-green-500">$16,000</div>
+                  <div>340</div>
+                  <div class="text-blue-500">4.9%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="single-channel pt-2 pb-2">
+              <div class="flex">
+                <div class="w-1/3">
+                  <div class="image-text flex">
+                    <div>
+                      <img
+                        class="w-8 h-8"
+                        src="./images/icons8-twitter-144.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="pl-2 pt-1">Twitter</div>
+                  </div>
+                </div>
+                <div class="w-3/4 flex space-x-16">
+                  <div>2.4k</div>
+                  <div class="text-green-500">$16,000</div>
+                  <div>340</div>
+                  <div class="text-blue-500">4.9%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- another card -->
+    </div>
+    <!-- main Area -->
+
+    <script src="./script.js"></script>
+  </body>
+</html>
